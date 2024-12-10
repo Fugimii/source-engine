@@ -11,7 +11,7 @@ jobs:
     - name: Build windows-amd64
       run: |
         git submodule init && git submodule update
-        ./waf.bat configure -T release -build-games=cstrike
+        ./waf.bat configure -T release -prefix=cstrike --build-games=cstrike 
         ./waf.bat build
 
   build-dedicated-windows-amd64:
@@ -22,5 +22,5 @@ jobs:
     - name: Build dedicated windows-amd64
       run: |
         git submodule init && git submodule update
-        ./waf.bat configure -T release -d -build-games=cstrike
+        ./waf.bat configure -T release -d -prefix=cstrike --build-games=cstrike 
         ./waf.bat build

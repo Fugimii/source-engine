@@ -11,16 +11,5 @@ jobs:
     - name: Build windows-amd64
       run: |
         git submodule init && git submodule update
-        ./waf.bat configure -T release -prefix=cstrike --build-games=cstrike 
-        ./waf.bat build
-
-  build-dedicated-windows-amd64:
-    runs-on: windows-2019
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build dedicated windows-amd64
-      run: |
-        git submodule init && git submodule update
-        ./waf.bat configure -T release -d -prefix=cstrike --build-games=cstrike 
+        ./waf.bat configure -T release --prefix=hl2 --build-games=hl2 --disable-warns
         ./waf.bat build

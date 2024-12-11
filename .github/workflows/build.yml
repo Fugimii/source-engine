@@ -14,7 +14,7 @@ jobs:
         ./waf.bat configure -T release --prefix=cstrike --build-games=cstrike --disable-warns
         ./waf.bat build
         ./waf.bat install
-    - uses: actions/upload-artifact@v4.4.3
-    - name: Upload a Build Artifact
+
+    - uses: actions/upload-artifact@v4
       with:
         path: ./
